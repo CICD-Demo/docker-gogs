@@ -1,7 +1,7 @@
 FROM centos:7
 
 #ENV GOGS_VERSION 0.6.1
-ENV GOGS_VERSION 0.6.2-openshift-m2
+ENV GOGS_VERSION 0.6.2-openshift-jm1
 
 RUN yum install -y curl openssh-server sqlite unzip git python-setuptools && \
     yum clean all && \
@@ -10,7 +10,7 @@ RUN yum install -y curl openssh-server sqlite unzip git python-setuptools && \
     mkdir /var/run/sshd
 
 #RUN curl -L -o /tmp/gogs.zip https://github.com/gogits/gogs/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
-RUN curl -L -o /tmp/gogs.zip https://github.com/fabric8io/gogs/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
+RUN curl -L -o /tmp/gogs.zip https://github.com/CICD-Demo/gogs/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
     cd /opt && unzip /tmp/gogs.zip && \
     rm -rf /tmp/gogs.zip /opt/__MACOSX $(find /opt/gogs -name .DS_Store) $(find /opt/gogs -name .idea)
 
