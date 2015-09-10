@@ -10,7 +10,7 @@ RUN yum install -y curl openssh-server sqlite unzip git python-setuptools && \
     mkdir /var/run/sshd
 
 #RUN curl -L -o /tmp/gogs.zip https://github.com/gogits/gogs/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
-RUN curl -L -o /tmp/gogs.zip https://github.com/CICD-Demo/gogs/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
+RUN curl -L -o /tmp/gogs.zip https://github.com/CICD-Demo/gogs-src/releases/download/v${GOGS_VERSION}/linux_amd64.zip && \
     cd /opt && unzip /tmp/gogs.zip && \
     rm -rf /tmp/gogs.zip /opt/__MACOSX $(find /opt/gogs -name .DS_Store) $(find /opt/gogs -name .idea)
 
